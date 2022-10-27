@@ -3,9 +3,9 @@ import 'package:cryptopoints/constants/validators.dart';
 import 'package:cryptopoints/generated/assets.dart';
 import 'package:cryptopoints/screens/user/bottom_nav_bar/bottom_navigation_bar.dart';
 import 'package:cryptopoints/screens/user/login_signup_forgot/forgot_password.dart';
+import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:cryptopoints/widgets/my_text_field.dart';
-import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {

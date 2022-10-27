@@ -3,6 +3,8 @@ import 'dart:developer';
 
 import 'package:cryptopoints/constants/constant_variables.dart';
 import 'package:cryptopoints/generated/assets.dart';
+/// Local imports
+import 'package:cryptopoints/models/sample_view.dart';
 import 'package:cryptopoints/widgets/height_width.dart';
 import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:cryptopoints/widgets/my_drop_down.dart';
@@ -10,12 +12,8 @@ import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 /// Chart import
 import 'package:syncfusion_flutter_charts/charts.dart';
-
-/// Local imports
-import 'package:cryptopoints/models/sample_view.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
 ///Renders default Candle series chart

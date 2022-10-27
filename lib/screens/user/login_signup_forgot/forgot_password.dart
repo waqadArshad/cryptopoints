@@ -1,9 +1,9 @@
 import 'package:cryptopoints/constants/constant_variables.dart';
 import 'package:cryptopoints/constants/validators.dart';
 import 'package:cryptopoints/generated/assets.dart';
+import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:cryptopoints/widgets/my_text_field.dart';
-import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatelessWidget {
