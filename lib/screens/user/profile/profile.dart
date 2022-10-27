@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:cryptopoints/constants/constant_variables.dart';
 import 'package:cryptopoints/generated/assets.dart';
+import 'package:cryptopoints/provider/theme_provider.dart';
 import 'package:cryptopoints/widgets/edit_bottom_sheet.dart';
 import 'package:cryptopoints/widgets/editing_text_field.dart';
 import 'package:cryptopoints/widgets/height_width.dart';
@@ -12,6 +13,7 @@ import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -32,6 +34,7 @@ class _ProfileState extends State<Profile> {
   TextEditingController currentPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController newEmailController = TextEditingController();
+
   // DocumentReference myDoc = accounts.doc(auth.currentUser?.uid ?? "");
 
   @override
@@ -148,6 +151,16 @@ class _ProfileState extends State<Profile> {
             },
           ),
         ],
+      ),
+      floatingActionButton: Consumer<ThemeChanger>(
+        builder: (context, provider, child) {
+          return FloatingActionButton(
+            child: Icon(Icons.cached_outlined),
+            onPressed: () {
+              provider.toogleTheme();
+            },
+          );
+        },
       ),
     );
   }
@@ -345,33 +358,33 @@ class _ProfileState extends State<Profile> {
     }
   }
 
-  // Future uploadPhoto() async {
-  //   String imageId = DateTime.now().toString();
-  //   Reference ref = await FirebaseStorage.instance.ref().child('Images/Profile Images/${imageId}');
-  //   try {
-  //     await ref
-  //         .putFile(
-  //       pickedImage!,
-  //       SettableMetadata(customMetadata: {
-  //         "imageId": imageId,
-  //         "userId": auth.currentUser?.uid ?? "",
-  //         "type": "profileImage",
-  //       }),
-  //     )
-  //         .then((p0) {
-  //       showMsg(context: context, msg: "Profile image updated successfully.");
-  //     });
-  //   } catch (e) {
-  //     log("error in updating profile picture: $e");
-  //   }
-  //   // await ref.getDownloadURL().then((value) async {
-  //   //   log('Profile Image URL $value');
-  //   //   pickedImageUrl = value;
-  //   //   await accounts.doc(auth.currentUser?.uid ?? "").update({"profileImageUrl": pickedImageUrl}).then((value) {
-  //   //     showMsg(context: context, msg: "Profile image updated successfully.");
-  //   //   });
-  //   // });
-  // }
+// Future uploadPhoto() async {
+//   String imageId = DateTime.now().toString();
+//   Reference ref = await FirebaseStorage.instance.ref().child('Images/Profile Images/${imageId}');
+//   try {
+//     await ref
+//         .putFile(
+//       pickedImage!,
+//       SettableMetadata(customMetadata: {
+//         "imageId": imageId,
+//         "userId": auth.currentUser?.uid ?? "",
+//         "type": "profileImage",
+//       }),
+//     )
+//         .then((p0) {
+//       showMsg(context: context, msg: "Profile image updated successfully.");
+//     });
+//   } catch (e) {
+//     log("error in updating profile picture: $e");
+//   }
+//   // await ref.getDownloadURL().then((value) async {
+//   //   log('Profile Image URL $value');
+//   //   pickedImageUrl = value;
+//   //   await accounts.doc(auth.currentUser?.uid ?? "").update({"profileImageUrl": pickedImageUrl}).then((value) {
+//   //     showMsg(context: context, msg: "Profile image updated successfully.");
+//   //   });
+//   // });
+// }
 /**/
 // Widget pickProfileImage(
 //   BuildContext context,

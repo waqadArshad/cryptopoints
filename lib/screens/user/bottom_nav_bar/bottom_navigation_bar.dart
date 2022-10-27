@@ -2,11 +2,9 @@ import 'dart:io';
 
 import 'package:cryptopoints/constants/constant_variables.dart';
 import 'package:cryptopoints/generated/assets.dart';
-import 'package:cryptopoints/screens/user/home/Settings.dart';
 import 'package:cryptopoints/screens/user/home/home_page.dart';
 import 'package:cryptopoints/screens/user/profile/profile.dart';
 import 'package:cryptopoints/widgets/my_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
