@@ -33,46 +33,16 @@ class MyTextField extends StatelessWidget {
       maxLines: maxLines,
       validator: validator,
       keyboardType: textInputType ?? TextInputType.text,
-      cursorColor: cursorColor ?? Colors.white,
+      // cursorColor: cursorColor ?? Colors.white,
       enableSuggestions: enableSuggestions ?? true,
       obscureText: obscureText ?? false,
       textInputAction: textInputAction,
       toolbarOptions: const ToolbarOptions(copy: true, cut: true, paste: true, selectAll: true),
       obscuringCharacter: "*",
-      style: TextStyle(color: whiteColor, fontFamily: GoogleFonts.openSans().fontFamily),
+      // style: TextStyle(color: whiteColor, fontFamily: GoogleFonts.openSans().fontFamily),
       textAlign: TextAlign.start,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: 14, color: greyColor, fontFamily: GoogleFonts.openSans().fontFamily),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          borderSide: BorderSide(
-            color: yellowColor,
-            width: 1.0,
-          ),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
-          borderSide: BorderSide(
-            color: yellowColor,
-            width: 1.0,
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(15)),
-          borderSide: BorderSide(
-            color: redColor,
-            width: 1.0,
-          ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: BorderSide(
-            color: redColor,
-            width: 1.0,
-          ),
-        ),
       ),
     );
   }

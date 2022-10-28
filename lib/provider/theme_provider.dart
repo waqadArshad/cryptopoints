@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class ThemeChanger extends ChangeNotifier {
   //
-  bool? darkTheme=true;
-
+  bool? darkTheme = false;
 
   // changeTheme() {
   //   darkTheme = true;

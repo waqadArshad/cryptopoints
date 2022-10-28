@@ -12,6 +12,7 @@ class MyText extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   var maxLines, overFlow;
   VoidCallback? onTap;
+  TextStyle? style;
 
   MyText({
     Key? key,
@@ -31,6 +32,7 @@ class MyText extends StatelessWidget {
     this.paddingLeft = 0,
     this.paddingBottom = 0,
     this.onTap,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -46,7 +48,7 @@ class MyText extends StatelessWidget {
         onTap: onTap,
         child: Text(
           "$text",
-          style: TextStyle(
+          style: style ?? TextStyle(
             fontSize: size,
             color: color,
             fontWeight: weight,

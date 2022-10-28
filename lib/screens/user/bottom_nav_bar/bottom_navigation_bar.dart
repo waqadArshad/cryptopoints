@@ -143,6 +143,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         MyText(
                           text: "Settings",
                           paddingLeft: 10,
+
                         )
                       ],
                     ),

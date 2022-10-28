@@ -19,7 +19,7 @@ class ForgotPassword extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: darkGreyColor,
+        // backgroundColor: darkGreyColor,
         elevation: 0,
         centerTitle: true,
         leading: Padding(
@@ -36,12 +36,13 @@ class ForgotPassword extends StatelessWidget {
         ),
         title: MyText(
           text: 'Forgot Password',
-          size: 20,
-          color: whiteColor,
+          style: Theme.of(context).textTheme.headline1,
+          // size: 20,
+          // color: whiteColor,
         ),
       ),
       body: Container(
-        color: darkGreyColor,
+        // color: darkGreyColor,
         height: size.height,
         width: size.width,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

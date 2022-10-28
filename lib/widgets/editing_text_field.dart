@@ -19,6 +19,7 @@ class ETextField extends StatelessWidget {
     this.onEditTap,
     this.labelSize = 19.0,
     this.textSize = 16.0,
+    this.style,
   }) : super(key: key);
 
   String? labelText, initialValue;
@@ -30,6 +31,7 @@ class ETextField extends StatelessWidget {
   VoidCallback? onEditTap;
   TextInputType? keyboardType;
   double? labelSize,textSize;
+  TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +49,7 @@ class ETextField extends StatelessWidget {
       obscuringCharacter: '*',
       cursorColor: whiteColor,
       cursorWidth: 1.0,
-      style: TextStyle(
+      style: style ?? TextStyle(
         fontSize: textSize,
         color: whiteColor,
       ),
@@ -64,6 +66,7 @@ class ETextField extends StatelessWidget {
               paddingLeft: 15,
               paddingRight: 10,
               text: labelText,
+              style: Theme.of(context).textTheme.headline2,
               size: labelSize,
               color: greyColor,
             ),
@@ -86,34 +89,6 @@ class ETextField extends StatelessWidget {
           ],
         )
             : const SizedBox(),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: yellowColor,
-            width: 1.0,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            color: yellowColor,
-            width: 1.0,
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: BorderSide(
-            color: redColor,
-            width: 1.0,
-          ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: BorderSide(
-            color: redColor,
-            width: 1.0,
-          ),
-        ),
       ),
     );
   }

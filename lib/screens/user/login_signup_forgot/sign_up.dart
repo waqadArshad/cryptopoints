@@ -21,7 +21,7 @@ class SignUp extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: darkGreyColor,
+        // backgroundColor: darkGreyColor,
         elevation: 0,
         bottomOpacity: 0,
         centerTitle: true,
@@ -42,12 +42,13 @@ class SignUp extends StatelessWidget {
         // ),
         title: MyText(
           text: 'Sign Up',
-          size: 18,
-          color: whiteColor,
+          style: Theme.of(context).textTheme.headline1,
+          // size: 18,
+          // color: ,
         ),
       ),
       body: Container(
-        color: darkGreyColor,
+        // color: darkGreyColor,
         height: size.height,
         width: size.width,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -122,13 +123,14 @@ class SignUp extends StatelessWidget {
                     // ),
                     leading: Image.asset(
                       Assets.assetsCamera,
-                      color: greyColor,
+                      color: blackColor,
                       height: 35,
                     ),
                     title: MyText(
                       text: 'Camera',
-                      size: 20,
-                      color: greyColor,
+                      style: Theme.of(context).textTheme.headline1,
+                      // size: 20,
+                      // color: greyColor,
                     ),
                   ),
                   ListTile(
@@ -140,12 +142,13 @@ class SignUp extends StatelessWidget {
                     leading: Image.asset(
                       Assets.assetsGallery,
                       height: 35,
-                      color: greyColor,
+                      color: blackColor,
                     ),
                     title: MyText(
                       text: 'Gallery',
-                      size: 20,
-                      color: greyColor,
+                      style: Theme.of(context).textTheme.headline1,
+                      // size: 20,
+                      // color: greyColor,
                     ),
                   ),
                 ],

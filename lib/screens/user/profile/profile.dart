@@ -177,7 +177,7 @@ class _ProfileState extends State<Profile> {
         horizontal: 30,
       ),
       decoration: const BoxDecoration(
-        color: darkGreyColor,
+        // color: darkGreyColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(28),
           topRight: Radius.circular(28),
@@ -193,8 +193,9 @@ class _ProfileState extends State<Profile> {
               Expanded(
                 child: MyText(
                   text: 'Please enter current password to re-authenticate as this is a security sensitive operation',
-                  size: 14,
-                  color: whiteColor,
+                  style: Theme.of(context).textTheme.headline2,
+                  // size: 14,
+                  // color: whiteColor,
                   maxLines: 3,
                 ),
               ),
@@ -244,13 +245,14 @@ class _ProfileState extends State<Profile> {
                     // ),
                     leading: Image.asset(
                       Assets.assetsCamera,
-                      color: greyColor,
+                      color: blackColor,
                       height: 35,
                     ),
                     title: MyText(
                       text: 'Camera',
-                      size: 20,
-                      color: greyColor,
+                      style: Theme.of(context).textTheme.headline1,
+                      // size: 20,
+                      // color: greyColor,
                     ),
                   ),
                   ListTile(
@@ -262,12 +264,13 @@ class _ProfileState extends State<Profile> {
                     leading: Image.asset(
                       Assets.assetsGallery,
                       height: 35,
-                      color: greyColor,
+                      color: blackColor,
                     ),
                     title: MyText(
                       text: 'Gallery',
-                      size: 20,
-                      color: greyColor,
+                      style: Theme.of(context).textTheme.headline1,
+                      // size: 20,
+                      // color: greyColor,
                     ),
                   ),
                 ],

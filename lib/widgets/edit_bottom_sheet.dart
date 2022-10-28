@@ -34,9 +34,10 @@ Widget bottomSheetForEdit(
               Container(),
               Expanded(
                 child: MyText(
-                  text: 'edit $title',
-                  size: 19,
-                  color: whiteColor,
+                  text: 'Edit $title',
+                  style: Theme.of(context).textTheme.headline2,
+                  // size: 19,
+                  // color: whiteColor,
                 ),
               ),
               GestureDetector(

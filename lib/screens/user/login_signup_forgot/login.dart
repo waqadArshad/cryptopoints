@@ -21,7 +21,7 @@ class Login extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: darkGreyColor,
+        // backgroundColor: darkGreyColor,
         elevation: 0,
         centerTitle: true,
         leading: Padding(
@@ -38,12 +38,13 @@ class Login extends StatelessWidget {
         ),
         title: MyText(
           text: 'Login',
-          size: 18,
-          color: whiteColor,
+          style: Theme.of(context).textTheme.headline1,
+          // size: 18,
+          // color: whiteColor,
         ),
       ),
       body: Container(
-        color: darkGreyColor,
+        // color: darkGreyColor,
         height: size.height,
         width: size.width,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -87,6 +88,7 @@ class Login extends StatelessWidget {
                         children: [
                           MyText(
                             text: "Forgot Password ?",
+                            style: Theme.of(context).textTheme.headline2,
                             color: yellowColor,
                             paddingRight: 5,
                             onTap: () {
