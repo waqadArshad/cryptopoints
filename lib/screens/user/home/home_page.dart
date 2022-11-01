@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:cryptopoints/constants/constant_variables.dart';
 import 'package:cryptopoints/generated/assets.dart';
+
 /// Local imports
 import 'package:cryptopoints/models/sample_view.dart';
 import 'package:cryptopoints/widgets/height_width.dart';
@@ -12,6 +13,7 @@ import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 /// Chart import
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:toggle_switch/toggle_switch.dart';
@@ -48,7 +50,9 @@ class _CandleChartState extends SampleViewState {
       return Column(
         // shrinkWrap: true,
         children: <Widget>[
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           SizedBox(
             child: MyDropDown(
               heading: 'Exchange',
@@ -97,25 +101,30 @@ class _CandleChartState extends SampleViewState {
               // onChanged: (value) => eventController.selectEventType(value),
             ),
           ),
-          const SizedBox(height: 15,),
-          SizedBox(
-            child: ToggleSwitch(
-              initialLabelIndex: 0,
-              totalSwitches: 3,
-              minWidth: width(context, 0.299),
-              labels: const ['Manual', 'Short Term', 'Long Term'],
-              activeBgColor: const [yellowColor],
-              activeFgColor: whiteColor,
-              onToggle: (index) {
-                log('switched to: $index');
-              },
+          const SizedBox(
+            height: 15,
+          ),
+          Center(
+            child: SizedBox(
+              child: ToggleSwitch(
+                initialLabelIndex: 0,
+                totalSwitches: 3,
+                minWidth: width(context, 0.290),
+                labels: const ['Manual', 'Short Term', 'Long Term'],
+                activeBgColor: const [yellowColor],
+                activeFgColor: whiteColor,
+                onToggle: (index) {
+                  log('switched to: $index');
+                },
+              ),
             ),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           SizedBox(
             child: GestureDetector(
               onTap: () => showModalBottomSheet(
-                // elevation: 4,
                 context: context,
                 builder: (_) {
                   return Column(
@@ -249,7 +258,9 @@ class _CandleChartState extends SampleViewState {
               // onChanged: (value) => eventController.selectEventType(value),
             ),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
 
           // SizedBox(
           //   child: Row(

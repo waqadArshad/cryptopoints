@@ -9,12 +9,10 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class BottomNavBar extends StatefulWidget {
-  BottomNavBar({
-    Key? key,
-    this.currentIndex = 0,
-  }) : super(key: key);
-
   int? currentIndex;
+
+  BottomNavBar({Key? key, this.currentIndex = 0}) : super(key: key);
+
 
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
@@ -114,41 +112,41 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
               BottomNavigationBarItem(
                 icon: (widget.currentIndex ?? 0) == 0
-                    ?  const Padding(
-                  padding: EdgeInsets.only(top: 5),
-                  child: ImageIcon(
-                    AssetImage(
-                      Assets.assetsSettings,
-                    ),
-                    size: 26.93,
-                  ),
-                ): Container(
-                  height: 45,
-                  width: size.width * 0.35,
-                  decoration: BoxDecoration(
-                    color: greyColor.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(15),
-                    // border: Border.all(width: 1.0, color: greyColor.withOpacity(0.5)),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
-                    child: Row(
-                      children: [
-                        const ImageIcon(
+                    ? const Padding(
+                        padding: EdgeInsets.only(top: 5),
+                        child: ImageIcon(
                           AssetImage(
                             Assets.assetsSettings,
                           ),
-                          size: 20,
+                          size: 26.93,
                         ),
-                        MyText(
-                          text: "Settings",
-                          paddingLeft: 10,
-
-                        )
-                      ],
-                    ),
-                  ),
-                ),
+                      )
+                    : Container(
+                        height: 45,
+                        width: size.width * 0.35,
+                        decoration: BoxDecoration(
+                          color: greyColor.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          // border: Border.all(width: 1.0, color: greyColor.withOpacity(0.5)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
+                          child: Row(
+                            children: [
+                              const ImageIcon(
+                                AssetImage(
+                                  Assets.assetsSettings,
+                                ),
+                                size: 20,
+                              ),
+                              MyText(
+                                text: "Settings",
+                                paddingLeft: 10,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                 label: 'Settings',
               ),
             ],

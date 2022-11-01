@@ -4,22 +4,14 @@ import 'package:cryptopoints/widgets/my_button.dart';
 import 'package:cryptopoints/widgets/my_text.dart';
 import 'package:flutter/material.dart';
 
-
-Widget bottomSheetForEdit(
-  BuildContext context, {
-  String? title,
-  Widget? selectedField,
-  VoidCallback? onSave,
-}) {
+Widget bottomSheetForEdit(BuildContext context, {String? title, Widget? selectedField, VoidCallback? onSave}) {
   return Padding(
     padding: MediaQuery.of(context).viewInsets,
     child: Container(
       height: 200,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       decoration: const BoxDecoration(
-        color: darkGreyColor,
+        // color: darkGreyColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(28),
           topRight: Radius.circular(28),
@@ -56,6 +48,52 @@ Widget bottomSheetForEdit(
           ),
         ],
       ),
+    ),
+  );
+}
+
+Widget passwordBottomSheetForEdit(context, {String? title, Widget? selectedField, VoidCallback? onSave}) {
+  return Container(
+    height: 200,
+    padding: const EdgeInsets.symmetric(horizontal: 30),
+    decoration: const BoxDecoration(
+      // color: darkGreyColor,
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(28),
+        topRight: Radius.circular(28),
+      ),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(),
+            Expanded(
+              child: MyText(
+                text: 'Please enter current password to re-authenticate as this is a security sensitive operation',
+                style: Theme.of(context).textTheme.headline2,
+                // size: 14,
+                // color: whiteColor,
+                maxLines: 3,
+              ),
+            ),
+            GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(
+                Assets.assetsRoundedClose,
+                height: 22.44,
+              ),
+            ),
+          ],
+        ),
+        selectedField!,
+        MyButton(
+          onTap: onSave,
+          buttonText: 'Re-authenticate',
+        ),
+      ],
     ),
   );
 }

@@ -30,7 +30,7 @@ class ETextField extends StatelessWidget {
   AutovalidateMode? autoValidateMode;
   VoidCallback? onEditTap;
   TextInputType? keyboardType;
-  double? labelSize,textSize;
+  double? labelSize, textSize;
   TextStyle? style;
 
   @override
@@ -49,16 +49,13 @@ class ETextField extends StatelessWidget {
       obscuringCharacter: '*',
       cursorColor: whiteColor,
       cursorWidth: 1.0,
-      style: style ?? TextStyle(
-        fontSize: textSize,
-        color: whiteColor,
-      ),
+      style: style ??
+          TextStyle(
+            fontSize: textSize,
+            // color: whiteColor,
+          ),
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 15,
-        ),
-        // fillColor: kPrimaryColor,
-        // filled: true,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 15),
         prefixIcon: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -77,17 +74,17 @@ class ETextField extends StatelessWidget {
         ),
         suffixIcon: isEditAble!
             ? Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            GestureDetector(
-              onTap: onEditTap,
-              child: Image.asset(
-                Assets.assetsEditIcon,
-                height: 16.03,
-              ),
-            ),
-          ],
-        )
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: onEditTap,
+                    child: Image.asset(
+                      Assets.assetsEditIcon,
+                      height: 16.03,
+                    ),
+                  ),
+                ],
+              )
             : const SizedBox(),
       ),
     );

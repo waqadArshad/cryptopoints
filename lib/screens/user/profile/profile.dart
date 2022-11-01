@@ -74,17 +74,14 @@ class _ProfileState extends State<Profile> {
             isEditAble: true,
             onEditTap: () {
               showModalBottomSheet(
-                backgroundColor: Colors.transparent,
+                // backgroundColor: Colors.transparent,
                 elevation: 0,
                 context: context,
                 builder: (context) {
                   return bottomSheetForEdit(
                     context,
                     title: 'Username',
-                    selectedField: ETextField(
-                      labelText: 'Username :',
-                      controller: nameController,
-                    ),
+                    selectedField: ETextField(labelText: 'Username :', controller: nameController),
                     onSave: () async {},
                   );
                 },
@@ -101,7 +98,7 @@ class _ProfileState extends State<Profile> {
             isEditAble: true,
             onEditTap: () {
               showModalBottomSheet(
-                backgroundColor: Colors.transparent,
+                // backgroundColor: Colors.transparent,
                 elevation: 0,
                 context: context,
                 builder: (context) {
@@ -131,7 +128,7 @@ class _ProfileState extends State<Profile> {
             isObSecure: true,
             onEditTap: () {
               showModalBottomSheet(
-                backgroundColor: Colors.transparent,
+                // backgroundColor: Colors.transparent,
                 elevation: 0,
                 context: context,
                 builder: (context) {
@@ -155,65 +152,12 @@ class _ProfileState extends State<Profile> {
       floatingActionButton: Consumer<ThemeChanger>(
         builder: (context, provider, child) {
           return FloatingActionButton(
-            child: Icon(Icons.cached_outlined),
+            child: const Icon(Icons.cached_outlined),
             onPressed: () {
               provider.toogleTheme();
             },
           );
         },
-      ),
-    );
-  }
-
-  Widget passwordBottomSheetForEdit(
-    BuildContext context, {
-    String? title,
-    Widget? selectedField,
-    VoidCallback? onSave,
-  }) {
-    return Container(
-      height: 200,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30,
-      ),
-      decoration: const BoxDecoration(
-        // color: darkGreyColor,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(28),
-          topRight: Radius.circular(28),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(),
-              Expanded(
-                child: MyText(
-                  text: 'Please enter current password to re-authenticate as this is a security sensitive operation',
-                  style: Theme.of(context).textTheme.headline2,
-                  // size: 14,
-                  // color: whiteColor,
-                  maxLines: 3,
-                ),
-              ),
-              GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child: Image.asset(
-                  Assets.assetsRoundedClose,
-                  height: 22.44,
-                ),
-              ),
-            ],
-          ),
-          selectedField!,
-          MyButton(
-            onTap: onSave,
-            buttonText: 'Re-authenticate',
-          ),
-        ],
       ),
     );
   }
@@ -230,9 +174,7 @@ class _ProfileState extends State<Profile> {
           builder: (context) {
             return Container(
               height: 180,
-              decoration: const BoxDecoration(
-                color: whiteColor,
-              ),
+              decoration: const BoxDecoration(color: whiteColor),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
